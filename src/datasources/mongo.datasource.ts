@@ -4,12 +4,8 @@ import {juggler} from '@loopback/repository';
 const config = {
   name: 'mongo',
   connector: 'mongodb',
-  url: 'mongodb://username:password@hostname:port/database',
-  host: '',
+  url: 'mongodb+srv://test:test@cluster0.oh46f.mongodb.net/SupermercadoDB',
   port: 0,
-  user: '',
-  password: '',
-  database: '',
   useNewUrlParser: true
 };
 

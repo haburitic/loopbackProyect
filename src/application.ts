@@ -1,3 +1,4 @@
+// ---------- ADD IMPORTS -------------
 import {AuthenticationComponent} from '@loopback/authentication';
 import {
   JWTAuthenticationComponent, UserServiceBindings
@@ -15,10 +16,11 @@ import path from 'path';
 import {MongoDataSource} from './datasources';
 import {MySequence} from './sequence';
 
+// ------------------------------------
 
 export {ApplicationConfig};
 
-export class GeneradorUdeCApplication extends BootMixin(
+export class Proyectoclase36Application extends BootMixin(
   ServiceMixin(RepositoryMixin(RestApplication)),
 ) {
   constructor(options: ApplicationConfig = {}) {
@@ -43,6 +45,8 @@ export class GeneradorUdeCApplication extends BootMixin(
     this.component(JWTAuthenticationComponent);
     // Bind datasource
     this.dataSource(MongoDataSource, UserServiceBindings.DATASOURCE_NAME);
+    // ------------- END OF SNIPPET -------------
+
     this.projectRoot = __dirname;
     // Customize @loopback/boot Booter Conventions here
     this.bootOptions = {

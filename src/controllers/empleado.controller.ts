@@ -1,30 +1,28 @@
+// ---------- ADD IMPORTS -------------
+import {authenticate} from '@loopback/authentication';
 import {
   Count,
   CountSchema,
   Filter,
   FilterExcludingWhere,
   repository,
-  Where,
+  Where
 } from '@loopback/repository';
 import {
-  post,
-  param,
-  get,
-  getModelSchemaRef,
-  patch,
-  put,
-  del,
-  requestBody,
-  response,
+  del, get,
+  getModelSchemaRef, param, patch, post, put, requestBody,
+  response
 } from '@loopback/rest';
 import {Empleado} from '../models';
 import {EmpleadoRepository} from '../repositories';
 
+// ------------------------------------
+@authenticate('jwt') // <---- Apply the @authenticate decorator at the class level
 export class EmpleadoController {
   constructor(
     @repository(EmpleadoRepository)
-    public empleadoRepository : EmpleadoRepository,
-  ) {}
+    public empleadoRepository: EmpleadoRepository,
+  ) { }
 
   @post('/empleados')
   @response(200, {
